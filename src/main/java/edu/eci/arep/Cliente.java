@@ -19,8 +19,7 @@ public class Cliente {
 
     public static void main(String[] args) throws UnirestException {
         HttpResponse<String> response = null;
-
-        response = Unirest.get("https://dyno-calculator.herokuapp.com/results?number=90&operacion=tan")
+        response = Unirest.get("https://dynofachada.herokuapp.com/results?number=90&operacion=sin")
                 .asString();
         System.out.println(response.getBody());
     }

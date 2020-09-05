@@ -7,17 +7,16 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 
 public class Cliente {
 
-    public static String get(String operation, String number) throws UnirestException {
+    public static String get(String number, String operacion) throws UnirestException {
 
         HttpResponse<String> response = null;
-        HttpResponse<String> response2 = null;
 
-        response = Unirest.get("https://dyno-calculator.herokuapp.com/results?number=" + number + "&operacion=" + operation)
+        response = Unirest.get("https://dyno-calculator.herokuapp.com/results?number=" + number + "&operacion=" + operacion)
                 .asString();
-        response2 = Unirest.get("https://dyno-calculator.herokuapp.com/results?number=0.785398&operacion=cos").asString();
+
         System.out.println(response.getBody());
 
-        return response2.getBody();
+        return response.getBody();
     }
 
     public static void main(String[] args) throws UnirestException {

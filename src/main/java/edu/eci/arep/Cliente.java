@@ -14,8 +14,6 @@ public class Cliente {
         response = Unirest.get("https://dyno-calculator.herokuapp.com/results?number=" + number + "&operacion=" + operacion)
                 .asString();
 
-        System.out.println(response.getBody());
-
         return response.getBody();
     }
 
